@@ -16,7 +16,6 @@ useHead({
       name: "keywords",
       content: "товары, описание",
     },
-    { hid: "author", name: "author", content: "Ваше Имя" },
     {
       hid: "viewport",
       name: "viewport",
