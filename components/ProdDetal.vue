@@ -44,7 +44,6 @@ export default {
           name: "keywords",
           content: `товар`,
         },
-        { hid: "author", name: "author", content: "Ваше Имя" },
         {
           hid: "viewport",
           name: "viewport",
