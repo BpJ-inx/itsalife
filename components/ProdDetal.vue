@@ -30,6 +30,30 @@ export default {
     onMounted(() => {
       fetchProduct(props.id);
     });
+
+    useHead({
+      title: `название продукта`,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: `описание`,
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: `товар`,
+        },
+        { hid: "author", name: "author", content: "Ваше Имя" },
+        {
+          hid: "viewport",
+          name: "viewport",
+          content: "width=device-width, initial-scale=1",
+        },
+      ],
+    });
+
+    return { product };
   },
 };
 </script>
