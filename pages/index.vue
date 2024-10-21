@@ -1,33 +1,29 @@
 <template>
-  <List></List>
+  <List />
 </template>
 
-<script>
-export default {
-  head() {
-    return {
-      title: "Список продуктов",
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: "Показ всех продуктов из API",
-        },
-        {
-          hid: "keywords",
-          name: "keywords",
-          content: "товары,описание",
-        },
-        { hid: "author", name: "author", content: "Ваше Имя" },
-        {
-          hid: "viewport",
-          name: "viewport",
-          content: "width=device-width, initial-scale=1",
-        },
-      ],
-    };
-  },
-};
+<script setup>
+useHead({
+  title: "Список продуктов",
+  meta: [
+    {
+      hid: "description",
+      name: "description",
+      content: "Показ всех продуктов из API",
+    },
+    {
+      hid: "keywords",
+      name: "keywords",
+      content: "товары, описание",
+    },
+    { hid: "author", name: "author", content: "Ваше Имя" },
+    {
+      hid: "viewport",
+      name: "viewport",
+      content: "width=device-width, initial-scale=1",
+    },
+  ],
+});
 </script>
 
 <style lang="scss" scoped></style>
