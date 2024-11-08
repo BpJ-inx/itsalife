@@ -4,3 +4,11 @@
     <NuxtPage to="/" />
   </div>
 </template>
+<script setup>
+import { useCart } from "@/store/index";
+
+const cartStore = useCart();
+onBeforeMount(() => {
+  cartStore.loadCart();
+});
+</script>
