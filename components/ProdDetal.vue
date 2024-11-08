@@ -4,12 +4,13 @@
     <h1>{{ product.title }}</h1>
     <p>{{ product.description }}</p>
     <p>{{ product.price }}$</p>
-    <button>В корзину</button>
+    <button @click="addToCart(product)">В корзину</button>
   </div>
 </template>
 
 <script>
 import { ref, onMounted } from "vue";
+import { useCart } from "~/store";
 
 export default {
   props: {
@@ -20,6 +21,11 @@ export default {
   },
   setup(props) {
     const product = ref(null);
+    const cartStore = useCart();
+
+    const addToCart = (product) => {
+      cartStore.addToCart(product);
+    };
 
     const fetchProduct = async (id) => {
       const res = await fetch(`https://dummyjson.com/products/${id}`);
@@ -52,7 +58,7 @@ export default {
       ],
     });
 
-    return { product };
+    return { product, addToCart };
   },
 };
 </script>

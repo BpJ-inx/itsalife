@@ -5,7 +5,7 @@
       <h2>{{ product.title }}</h2>
       <p>{{ product.description }}</p>
       <p>{{ product.price }}$</p>
-      <button>В карзину</button>
+      <button @click="addToCart(product)">В карзину</button>
       <NuxtLink :to="`/products/${product.id}`">Детальная информация</NuxtLink>
     </div>
   </div>
@@ -13,9 +13,16 @@
 
 <script>
 import { ref } from "vue";
+import { useCart } from "~/store";
 export default {
   setup() {
     const products = ref([]);
+    const cartStore = useCart();
+
+    const addToCart = (product) => {
+      cartStore.addToCart(product);
+      console.log("asd");
+    };
 
     const fetchProd = async () => {
       const res = await fetch("https://dummyjson.com/products");
@@ -25,6 +32,7 @@ export default {
     fetchProd();
     return {
       products,
+      addToCart,
     };
   },
 };

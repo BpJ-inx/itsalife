@@ -6,6 +6,7 @@
 import { useRoute } from "vue-router";
 import ProdDetal from "@/components/ProdDetal.vue";
 
+
 export default {
   components: {
     ProdDetal,
@@ -13,7 +14,6 @@ export default {
   setup() {
     const route = useRoute();
 
-    
     return { route };
   },
 };
