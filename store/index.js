@@ -81,6 +81,7 @@ export const useCart = defineStore("cart", {
     },
 
     loadCart() {
+    //   console.log("loadCart");
       if (typeof window !== "undefined" && localStorage.getItem("cart")) {
         this.cart = JSON.parse(localStorage.getItem("cart"));
       }

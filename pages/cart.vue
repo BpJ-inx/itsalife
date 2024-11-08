@@ -32,6 +32,7 @@ const clearAllCart = () => {
   cartStore.cleaerAllCart();
 };
 
+
 const total = computed(() => {
   return cartStore.cart
     .reduce((total, item) => total + item.price * item.kolvo, 0)

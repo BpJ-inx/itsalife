@@ -3,6 +3,13 @@
 </template>
 
 <script setup>
+import { useCart } from "@/store/index";
+
+const cartStore = useCart();
+onBeforeMount(() => {
+  cartStore.loadCart();
+});
+
 useHead({
   title: "Список продуктов",
   meta: [
