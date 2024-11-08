@@ -1,3 +1,4 @@
+//                                       setup state
 // import { defineStore } from "pinia";
 // import { ref } from "vue";
 
@@ -44,6 +45,7 @@
 //   };
 // });
 
+//                                        option state
 import { defineStore } from "pinia";
 
 export const useCart = defineStore("cart", {
@@ -59,7 +61,7 @@ export const useCart = defineStore("cart", {
       } else {
         this.cart.push({ ...product, kolvo: 1 });
       }
-      this._updateLocalStorage();
+      localStorage.setItem("cart", JSON.stringify(this.cart));
     },
 
     delFromCart(prodId) {
@@ -70,15 +72,11 @@ export const useCart = defineStore("cart", {
       } else {
         this.cart = this.cart.filter((item) => item.id !== prodId);
       }
-      this._updateLocalStorage();
+      localStorage.setItem("cart", JSON.stringify(this.cart));
     },
 
     cleaerAllCart() {
       this.cart = [];
-      this._updateLocalStorage();
-    },
-
-    _updateLocalStorage() {
       localStorage.setItem("cart", JSON.stringify(this.cart));
     },
 
